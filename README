@@ -1,0 +1,44 @@
+How to create a vim config, starting from this base:
+====================================================
+
+1. Fork this repo at github
+
+2. Check out your repo
+
+3. Fetch the submodules:
+git submodule update --init
+
+
+Change a submodule from within vim-conf-gerw
+============================================
+We assume you change the submodule located in bundles/vim-tex-syntax
+
+1. Ensure you have a clean status?
+git status
+
+2. Make the change to the submodule
+
+3. (Add + ) Commit the changes (to the master branch of the submodule):
+cd bundles/vim-tex-syntax
+git checkout master
+git commit -m 'Message'
+
+4. Push it
+git push origin master
+
+
+5. Tell vim-conf-base that the package has been updated
+cd ../..
+git checkout vim-conf-base/master 
+git add bundle/vim-tex-syntax
+git commit 
+ => should end in "detached HEAD"
+git push vim-conf-base HEAD:master
+
+6. Check out your master and merge the changes from vim-conf-base/master
+git checkout master
+git merge vim-conf-base/master
+
+7. Push changes to your repo
+git push origin master
+
