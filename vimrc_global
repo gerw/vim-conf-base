@@ -1,0 +1,8 @@
+" This is a common vimrc
+
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+
+" Source user's vimrc
+source vimrc_local

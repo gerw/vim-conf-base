@@ -1,0 +1,3 @@
+[submodule "bundle/vim-tex-syntax"]
+	path = bundle/vim-tex-syntax
+	url = git@github.com:gerw/vim-tex-syntax.git
