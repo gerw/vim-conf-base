@@ -9,4 +9,5 @@ call pathogen#helptags()
 
 
 " Source user's vimrc
-source vimrc_local
+" 'source vimrc_local' does not work, if ~/.vimrc is a symlink to vimrc_global.
+runtime vimrc_local
