@@ -1,5 +1,9 @@
 " This is a common vimrc
 
+" Set nocompatible option, otherwise pathogen does not work.
+set nocompatible
+
+" Call Pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
