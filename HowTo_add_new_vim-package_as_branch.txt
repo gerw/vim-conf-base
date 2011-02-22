@@ -1,0 +1,27 @@
+# Is there already a 
+ALL plugins of vim.org already have some repo at github:
+http://vim-scripts.org/vim/scripts.html
+http://github.com/vim-scripts/
+=> Use it or clone (fork) it ;-)
+
+# Create an empty repo
+git symbolic-ref HEAD refs/heads/vim-EnhancedCommentify
+rm .git/index
+git clean -fdx
+
+# Create a .gitignore
+cp ../my_gitignore .gitignore
+
+# Add plugin files
+
+# Commit the changes (use the --author="bla <bla@bla.de>" parameter?)
+git commit -a -m "Initial commit, version 2.3"
+
+# Check out the remote repo
+git remote add vim-EnhancedCommentify git@github.com:gerw/vim-EnhancedCommentify.git
+
+# Everything ok?
+git push -u vim-EnhancedCommentify vim-EnhancedCommentify:master --dry-run
+
+# Push it!
+git push -u vim-EnhancedCommentify vim-EnhancedCommentify:master
