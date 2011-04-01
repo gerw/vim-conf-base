@@ -9,6 +9,15 @@ How to create a vim config, starting from this base:
 git submodule update --init
 
 
+Add a new submodule
+===================
+
+git submodule add git@github.com:gerw/vim-latex-suite.git bundle/vim-latex-suite
+git submodule update --init
+./add_doc_tags_to_exclude.sh
+git commit -m 'Added vim-latex-suite as submodule'
+
+
 Change a submodule from within vim-conf-gerw
 ============================================
 We assume you change the submodule located in bundles/vim-tex-syntax

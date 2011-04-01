@@ -6,4 +6,5 @@
 
 for i in bundle/*/.git/info/exclude; do
 	grep -q "doc/tags" "$i" || echo "doc/tags" >> "$i";
+	grep -q "\*.pyc" "$i" || echo "*.pyc" >> "$i";
 done
