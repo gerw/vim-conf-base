@@ -4,7 +4,14 @@
 # adds "doc/tags" to the files "bundle/*/.git/info/exclude"
 # => git will not report, that the doc/tags was added in a bundle and is untracked
 
-for i in bundle/*/.git/info/exclude; do
+# Pre git 1.7.8:
+# for i in bundle/*/.git/info/exclude; do
+# 	grep -q "doc/tags" "$i" || echo "doc/tags" >> "$i";
+# 	grep -q "\*.pyc" "$i" || echo "*.pyc" >> "$i";
+# done
+
+# As of git 1.7.8, the information is stored in a different place.
+for i in .git/modules/bundle/*/info/exclude; do
 	grep -q "doc/tags" "$i" || echo "doc/tags" >> "$i";
 	grep -q "\*.pyc" "$i" || echo "*.pyc" >> "$i";
 done
